@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CAICS.DesktopClient", "CAICS.DesktopClient\CAICS.DesktopClient.csproj", "{AF60785D-AAAD-4133-A1DE-53769B0C107E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAICS.Models", "CAICS.Models\CAICS.Models.csproj", "{3A50EEE7-5CF6-449E-941C-753BB7BDAD12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF60785D-AAAD-4133-A1DE-53769B0C107E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF60785D-AAAD-4133-A1DE-53769B0C107E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF60785D-AAAD-4133-A1DE-53769B0C107E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF60785D-AAAD-4133-A1DE-53769B0C107E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A50EEE7-5CF6-449E-941C-753BB7BDAD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A50EEE7-5CF6-449E-941C-753BB7BDAD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A50EEE7-5CF6-449E-941C-753BB7BDAD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A50EEE7-5CF6-449E-941C-753BB7BDAD12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6936FD1D-6AF1-4938-A3CC-F4D958F782EC}
+	EndGlobalSection
+EndGlobal
