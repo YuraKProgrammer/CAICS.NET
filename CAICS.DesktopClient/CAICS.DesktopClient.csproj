@@ -8,7 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="images\" />
+    <None Remove="images\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UserControls\" />
+    <Folder Include="Windows\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CAICS.Models\CAICS.Models.csproj" />
+    <ProjectReference Include="..\CAICS.PaymentsStorage\CAICS.PaymentsStorage.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,3 +3,5 @@
 /CAICS.DesktopClient/bin
 /CAICS.Models/obj
 /CAICS.Models/bin
+/CAICS.PaymentsStorage/bin
+/CAICS.PaymentsStorage/obj

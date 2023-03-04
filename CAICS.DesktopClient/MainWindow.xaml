@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CAICS.DesktopClient"
         mc:Ignorable="d"
-        Title="Основное окно" Height="768" Width="1366">
+        Title="Основное окно CAICS" Height="768" Width="1366" Icon="/CAICS.DesktopClient;component/images/icon.ico">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -49,10 +50,16 @@
                     <MenuItem Header="-неделя" Click="_previousWeek"/>
                     <MenuItem Header="-месяц" Click="_previousMonth"/>
                 </MenuItem>
-                <TextBlock x:Name="Name" FontSize="20"/>
+                <TextBox Text="Введите имя..." x:Name="Name" FontSize="20"/>
                 <TextBlock Text="(Пользователь)" FontSize="20"/>
                 <TextBlock x:Name="_dateTime" FontSize="20"/>
             </Menu>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ProgressBar x:Name="_balanceProgress" Value="0" Maximum="0" Minimum="0" Height="20" Foreground="YellowGreen"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <TextBlock x:Name="_balanceText" FontSize="20" Text="В кошельке: 0 рублей"/>
         </StackPanel>
     </Grid>
 </Window>

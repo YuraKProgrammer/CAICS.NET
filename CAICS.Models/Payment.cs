@@ -11,10 +11,13 @@ namespace CAICS.Models
         public int Value { get; set; }
         public string Name { get; set; }
 
-        public Payment(int value, string name)
+        public Payment(int value, string name, DateTime dateTime)
         {
             Value = value;
             Name = name;
+            DateTime = dateTime;
         }
+
+        public DateTime DateTime { get; set; }
     }
 }

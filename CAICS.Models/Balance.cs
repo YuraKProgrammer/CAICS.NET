@@ -11,5 +11,10 @@ namespace CAICS.Models
         public Currency Currency { get; set; }
 
         public int Value { get; set; }
+        public Balance(Currency currency, int value)
+        {
+            Currency = currency;
+            Value = value;
+        }
     }
 }
