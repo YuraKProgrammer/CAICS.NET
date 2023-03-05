@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CAICS.Models
 {
+    [Serializable]
     public class Payment
     {
         public int Value { get; set; }

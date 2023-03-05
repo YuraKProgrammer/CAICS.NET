@@ -1,4 +1,5 @@
-﻿using CAICS.Models;
+﻿using CAICS.DesktopClient.Windows;
+using CAICS.Models;
 using CAICS.PaymentsStorage;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace CAICS.DesktopClient
         {
             var sum = 0;
             var sum2 = 0;
-            // payments = paymentsStorage.;
+            payments = paymentsStorage.LoadAll();
             var dayPayments = payments.Where(p => p.DateTime <= Date);
             foreach (var p in dayPayments)
             {
@@ -76,7 +77,8 @@ namespace CAICS.DesktopClient
 
         public void _addPayment(object sender, RoutedEventArgs e)
         {
-
+            Window window = new AddPaymentWindow(Date);
+            window.Show();
         }
 
         public void _addRegularPayment(object sender, RoutedEventArgs e)
