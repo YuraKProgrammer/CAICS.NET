@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UserControls\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CAICS.Models\CAICS.Models.csproj" />
     <ProjectReference Include="..\CAICS.PaymentsStorage\CAICS.PaymentsStorage.csproj" />
   </ItemGroup>

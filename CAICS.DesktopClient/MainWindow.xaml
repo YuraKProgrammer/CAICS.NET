@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CAICS.DesktopClient"
+        xmlns:controls="clr-namespace:CAICS.DesktopClient.UserControls"
         mc:Ignorable="d"
         Title="Основное окно CAICS" Height="768" Width="1366" Icon="/CAICS.DesktopClient;component/images/icon.ico">
     <Grid>
@@ -60,6 +61,15 @@
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock x:Name="_balanceText" FontSize="20" Text="В кошельке: 0 рублей"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <ListBox x:Name="lb" MouseDoubleClick="_lb_MouseDoubleClick" Height="Auto" Width="Auto">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <controls:PaymentControl/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>

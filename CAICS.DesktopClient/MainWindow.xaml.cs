@@ -68,6 +68,8 @@ namespace CAICS.DesktopClient
                 Balance = new Balance(Currency.Rubles,0);
             }
             _balanceText.Text = "В кошельке: " + Balance.Value + " рублей";
+            _dateTime.Text = Date.AddHours(3).ToString();
+            lb.ItemsSource = payments.Where(p => p.DateTime.Day == Date.Day && p.DateTime.Month == Date.Month && p.DateTime.Year == Date.Year);
         }
 
         public void _payments_reload(object sender, RoutedEventArgs e)
@@ -83,47 +85,73 @@ namespace CAICS.DesktopClient
 
         public void _addRegularPayment(object sender, RoutedEventArgs e)
         {
-
+            if (lb.SelectedItem == null)
+            {
+                MessageBox.Show("Сначала выберите уже существующую оплату!", "Сообщение");
+            }
+            else
+            {
+                var p = (Payment)lb.SelectedItem;
+                var d1 = Date.AddYears(1);
+                for (DateTime d = Date.AddMonths(1); DateTime.Compare(d, d1) <= 0; d=d.AddMonths(1))
+                {
+                    paymentsStorage.Save(new Payment(p.Value, p.Name, d));
+                }
+            }
         }
 
         public void _nextDay(object sender, RoutedEventArgs e)
         {
-
+            Date = Date.AddDays(1);
+            Update();
         }
 
         public void _next3Day(object sender, RoutedEventArgs e)
         {
-
+            Date = Date.AddDays(3);
+            Update();
         }
 
         public void _nextWeek(object sender, RoutedEventArgs e)
         {
-
+            Date = Date.AddDays(7);
+            Update();
         }
 
         public void _nextMonth(object sender, RoutedEventArgs e)
         {
-
+            Date = Date.AddMonths(1);
+            Update();
         }
 
         public void _previousDay(object sender, RoutedEventArgs e)
         {
-
+            Date = Date.AddDays(-1);
+            Update();
         }
         
         public void _previous3Day(object sender, RoutedEventArgs e)
         {
-
+            Date = Date.AddDays(-3);
+            Update();
         }
 
         public void _previousWeek(object sender, RoutedEventArgs e)
         {
-
+            Date = Date.AddDays(-7);
+            Update();
         }
 
         public void _previousMonth(object sender, RoutedEventArgs e)
         {
+            Date = Date.AddMonths(-1);
+            Update();
+        }
 
+        public void _lb_MouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            var window = new ViewPaymentWindow((Payment)lb.SelectedItem);
+            window.Show();
         }
     }
 }
